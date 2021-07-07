@@ -11,7 +11,7 @@ namespace OnTheWay
 {
 
 
-    public partial class WebForm3
+    public partial class MyRequest
     {
 
         /// <summary>

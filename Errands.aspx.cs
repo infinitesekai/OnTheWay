@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace OnTheWay
 {
-    public partial class WebForm5 : System.Web.UI.Page
+    public partial class Errands : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

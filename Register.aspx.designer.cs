@@ -11,7 +11,7 @@ namespace OnTheWay
 {
 
 
-    public partial class WebForm5
+    public partial class Register
     {
 
         /// <summary>

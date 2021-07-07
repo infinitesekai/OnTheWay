@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Errands.aspx.cs" Inherits="OnTheWay.WebForm5" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Errands.aspx.cs" Inherits="OnTheWay.Errands" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <section>
 <div>
