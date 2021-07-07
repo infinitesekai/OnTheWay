@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\OTW.mdf" />
+    <Content Include="App_Data\OTW_log.ldf">
+      <DependentUpon>OTW.mdf</DependentUpon>
+    </Content>
     <Content Include="CSS\dropdown.css" />
     <Content Include="CSS\printing.css" />
     <Content Include="CSS\style.css" />
