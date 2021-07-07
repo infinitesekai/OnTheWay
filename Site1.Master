@@ -45,7 +45,7 @@
       font-size: 42px;
       text-align: center;
       padding: 5px;
-      color: #1FB6B9;
+      color: #13227A;
     }
 
     .Services_box {
@@ -74,9 +74,9 @@
 <body>
     <form id="form1" runat="server">
 
-        <div
+    <div
      style="padding-left:30px;padding-right:50px;height:70px; background-color:white;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
-    <div id="header" style="float:right; position:relative;bottom:10px;">
+    <div id="header" style="float:right; position:relative;">
      <ul>
       <li>Home</li>
       <li class="dropdown">
@@ -94,13 +94,21 @@
      
     </div>
     
-	<div style="padding:10px;">
-      <img src="./images/running.png" style="padding-right:5px;padding-bottom:15px;height:50px;width:50px" />
-      <img src="./images/running.png" style="padding-bottom:5px;height:60px;width:60px" />
+	<div>
+        <table>
+            <tr>
+                <td>
+                     <img src="./images/running.png" style="padding-right:5px;height:50px;width:50px"/>
+                </td>
+                 <td>
+                  <p style="font-weight:900; font-family:'Space Grotesk';font-size:20px; color:#13227A;" >OnTheWay</p>
+                 </td>
+           </tr>
+        </table>
     </div>
   </div>
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>

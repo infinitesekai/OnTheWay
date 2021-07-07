@@ -11,7 +11,7 @@ namespace OnTheWay
 {
 
 
-    public partial class Site1
+    public partial class Site2
     {
 
         /// <summary>
@@ -33,12 +33,12 @@ namespace OnTheWay
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// MainContent control.
+        /// MainContent2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent2;
     }
 }

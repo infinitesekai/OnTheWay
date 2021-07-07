@@ -4,7 +4,7 @@
     width: 100%;
 }
 .button{
-    background-color:#1FB6B9;
+    background-color:#13227A;
     border: none;
     border-radius: 5px;
     cursor: hand;
@@ -48,7 +48,7 @@
 }
 .requestWord{
     padding-top:25px;
-	color:#1FB6B9 ;
+	color:#13227A ;
     font-family: Space Grotesk;
     font-size: 42px;
     text-align: center;
@@ -61,7 +61,7 @@
 }
 .request{
     background-color: white;
-    box-shadow:0px 4px 5px #1FB6B9;
+    box-shadow:0px 4px 5px #13227A;
     height: 20em;
     margin-left: 2.5em;
     padding: 1em;
