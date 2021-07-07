@@ -13,7 +13,7 @@
                                 </div>
 
                                 <div style="float: right;">
-                                    <input type="text" name="inputBox" placeholder="Username"/>
+                                   <asp:TextBox ID="login_email" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" placeholder="Email" margin="2px auto" ></asp:TextBox>
                                 </div>
 
                             </div>
@@ -30,7 +30,7 @@
                                 </div>
 
                                 <div style="float: right;">
-                                    <input type="text" name="inputBox" placeholder="Password"/>
+                                    <asp:TextBox ID="login_password" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" placeholder="Password" margin="2px auto" ></asp:TextBox>
                                 </div>
 
                             </div>
