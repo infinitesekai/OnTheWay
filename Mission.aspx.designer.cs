@@ -11,7 +11,7 @@ namespace OnTheWay
 {
 
 
-    public partial class Mision
+    public partial class Mission
     {
 
         /// <summary>

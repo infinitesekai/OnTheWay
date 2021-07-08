@@ -4,121 +4,124 @@
 
 <html>
 <head runat="server">
-     <link rel="styleSheet" href="./CSS/style.css">
-  <link rel="styleSheet" href="./CSS/dropdown.css">
-  <link rel="icon" href="./images/running.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="styleSheet" href="./CSS/printing.css">
+    <link rel="styleSheet" href="./CSS/style.css">
+    <link rel="styleSheet" href="./CSS/dropdown.css">
+    <link rel="icon" href="./images/running.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
-    body {
-      margin: 0px;
-      border: 0px;
-      padding: 0px;
-	  width:100%;
-	  background-color: #f8f8f8;
-    }
+        a{
+            text-decoration:none;
+        }
+        body {
+            margin: 0px;
+            border: 0px;
+            padding: 0px;
+            width: 100%;
+            background-color: #f8f8f8;
+        }
 
 
-    #header li {
-      position: relative;
-      bottom: 20px;
-      cursor: hand;
-      display: inline;
-      width: 75px;
-      margin: 5px;
-      text-align: center;
-      vertical-align: center;
-      padding: 20px;
-      padding-bottom: 10px;
-      font-size: 15px;
-      font-family: 'Space Grotesk';
-      color: #707070;
-    }
+        #header li {
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+            display: inline;
+            width: 75px;
+            margin: 5px;
+            text-align: center;
+            vertical-align: center;
+            padding: 20px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            font-family: 'Space Grotesk';
+            color: #707070;
+        }
 
-    .Title-font {
-      font-family: 'Space Grotesk';
-      font-weight: 900;
-      font-size: 42px;
-      text-align: center;
-      padding: 5px;
-      color: #13227A;
-    }
+        .Title-font {
+            font-family: 'Space Grotesk';
+            font-weight: 900;
+            font-size: 42px;
+            text-align: center;
+            padding: 5px;
+            color: #13227A;
+        }
 
-    .Services_box {
-      width: 167px;
-      height: 167px;
-      box-shadow: 0px 4px 5px #888888;
-      border-radius: 5px;
-      cursor: hand;
-    }
+        .Services_box {
+            width: 167px;
+            height: 167px;
+            box-shadow: 0px 4px 5px #888888;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    .Services_font {
-      color: #707070;
-      text-align: center;
-      font-size: 15px;
-      font-family: 'Space Grotesk'
-    }
+        .Services_font {
+            color: #707070;
+            text-align: center;
+            font-size: 15px;
+            font-family: 'Space Grotesk'
+        }
 
-    .Services_box:hover {
-      background-color: #DDDDDD;
-    }
-	
-	
-
-  </style>
+        .Services_box:hover {
+            background-color: #DDDDDD;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div
+            style= "width:inherit; padding-left: 30px; padding-right: 50px; height: 70px; background-color: white; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
+            <div id="header" style="float: right; position: relative; top: 45px; left: 6px;">
+                <ul style="width:fit-content; margin:auto;">
+                    <li><a runat="server" href="homepage.aspx">Home</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown_btn">Request <i class="fa fa-caret-down"></i></button>
+                        <div class="dd-content">
+                            <a runat="server" href="~/Cleaning">Cleaning</a>
+                            <a runat="server" href="~/Printing">Printing</a>
+                            <a runat="server" href="~/Errands">Errands</a>
+                        </div>
+                    </li>
+                    <li><a runat="server" href="~/Mission"> Mission </a></li>
+                     <li><a runat="server" href="~/MyRequest"> My Request </a></li>
+                    <li><a runat="server" href="Login.aspx">Logout</a></li> 
+                </ul>
 
-    <div
-     style="padding-left:30px;padding-right:50px;height:70px; background-color:white;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
-    <div id="header" style="float:right; position:relative;">
-     <ul>
-      <li>Home</li>
-      <li class="dropdown">
-	  <button class="dropdown_btn" >Request <i class="fa fa-caret-down"></i></button>
-		<div class="dd-content">
-			<a href="#">Cleaning</a>
-			<a href="#">Printing</a>
-			<a href="#">Errands</a>
-			<a href="#">Carpool</a>
-		</div>
-	  </li>
-      <li>Mission</li>
-      <li>Logout</li>
-      </ul>
-     
-    </div>
-    
-	<div>
-        <table>
-            <tr>
-                <td>
-                     <img src="./images/running.png" style="padding-right:5px;height:50px;width:50px"/>
-                </td>
-                 <td>
-                  <p style="font-weight:900; font-family:'Space Grotesk';font-size:20px; color:#13227A;" >OnTheWay</p>
-                 </td>
-           </tr>
-        </table>
-    </div>
-  </div>
-        <div>
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="./images/running.png" style="padding-right: 5px; height: 50px; width: 50px" />
+                        </td>
+                        <td>
+                            <p style="font-weight: 900; font-family: 'Space Grotesk'; font-size: 20px; color: #13227A;">OnTheWay</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="width:inherit;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
 
     <!--footer-->
-  <!--absolute or fixed position, not moving while scrolling-->
-  <div
-    style="line-height:25px;margin-top:0px;font-weight:900;text-align:center;font-family:'Space Grotesk';font-size:20px;background-color:#13227A;padding:15px; color:white;">
-    <br />Copyright 2021, Xiamen University Malaysia<br/>
-    OnTheWay Development Team
-  </div>
+    <!--absolute or fixed position, not moving while scrolling-->
+    <div
+        style="width:inherit; line-height: 25px; margin-top: 0px; font-weight: 900; text-align: center; font-family: 'Space Grotesk'; font-size: 20px; background-color: #13227A; padding: 15px; color: white;">
+        <br />
+        <p>&copy; <%: DateTime.Now.Year %>, Xiamen University Malaysia</p>
+        OnTheWay Development Team
+    </div>
+
+<script src="./JS/PrintingService.js"></script>
 </body>
 </html>

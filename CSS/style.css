@@ -2,22 +2,23 @@
 .tableStyle{
     position: center;
     width: 100%;
+    margin:auto;
 }
-.button{
-    background-color:#13227A;
+.button {
+    background-color: #13227A;
     border: none;
-    border-radius: 5px;
-    cursor: hand;
-    color:white; 
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
     font-family: Space Grotesk;
-    font-weight:800; 
-    font-size:1.2em;
+    font-weight: 800;
+    font-size: 1.2em;
     left: 70px;
     margin: 0 auto;
-    padding:9px; 
+    padding: 9px;
     position: relative;
-    text-align:center;  
-    width:5em;
+    text-align: center;
+    width: 5em;
 }
 .button:hover {
     background-color: #707070;
@@ -27,6 +28,7 @@
     font-family: Space Grotesk;
     font-size: 20px;
     margin-left: 20px;
+    margin-bottom:15px;
     padding: 0.5em;
     text-align: justify;
     width: 75%;
@@ -42,7 +44,7 @@
 .name{
     color:#707070 ;
     font-family: Space Grotesk;
-    font-size: 20px;
+    font-size: 25px;
     padding: 0.5em;
     text-align: center;
 }
@@ -63,7 +65,7 @@
     background-color: white;
     box-shadow:0px 4px 5px #13227A;
     height: 20em;
-    margin-left: 2.5em;
+    margin-left: 1.5em;
     padding: 1em;
     width: 15em;    
 }

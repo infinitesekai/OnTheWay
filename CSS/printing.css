@@ -4,7 +4,7 @@
     border:none;
     border-radius: 5px;
     color:#6b6666; 
-    cursor: hand;
+    cursor: pointer;
     height: 45px;
     float: left;
     font-family: Space Grotesk;
@@ -19,14 +19,14 @@
     color: white;
 }
 .middle{
-    margin: 5em 20em 5em 30em ;
-    padding: 6em auto 6em;
+    margin: 0px auto auto 0px;
     border-radius: 5px;
     background-color: white;
     box-shadow:0px 4px 5px #707070;
     position: relative;
-    right: 3em;
-    width: 37em;
+    width: 22.4em;
+    top: -2px;
+    left: 318px;
 }
 .imageMiddle{
     display: block;
@@ -37,19 +37,19 @@
     width: 4.5em;
     float: right;
 }
-.title{
-    color: #1FB6B9;
+.title {
+    color: #13227A;
     font-family: 'Space Grotesk';
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 900;
-    padding: 5px;
+    /*padding: 5px;
     padding-top:15px;
-    padding-left:70px;
-    text-align: left;
+    padding-left:30px;*/
+    padding: 0.5em;
+    text-align: center;
 }
 .printing{
     height:80px;
-    left:50px;
     padding-left:20px;
     padding-top:10px;
     position:relative;

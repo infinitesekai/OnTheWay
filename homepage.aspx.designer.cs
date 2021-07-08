@@ -11,7 +11,7 @@ namespace OnTheWay
 {
 
 
-    public partial class HomePage
+    public partial class homepage
     {
     }
 }

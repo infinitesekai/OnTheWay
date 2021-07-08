@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="OnTheWay.HomePage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="OnTheWay.homepage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div
-    style="width:fit;position:relative;top:1.5px;padding-right:30px;height:350px; background-color:white;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
+    style="width:100%; position:relative;top:1.5px;padding-right:30px;height:350px; background-color:white;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
     <table width="100%">
       <tr>
-        <td width="65%">
+        <td width="fit-content">
           <table width="100%">
             <tr>
               <td
@@ -35,9 +35,7 @@
             style="position:relative;left:80px;padding-right:15px;width:300px;height:300px" />
         </td>
 
-      <tr>
-
-    </table>
+      </table>
   </div>
 
      <div

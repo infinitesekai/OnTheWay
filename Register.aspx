@@ -7,9 +7,7 @@
             <div style="padding: 30px; padding-bottom: 5px; font-weight: 900; font-family:'Space Grotesk'; color: #13227A; font-size: 1.5em;">
                 <b>Register</b>
             </div>
-
             <div style="margin-left:30px ;width:85%; border-bottom: 2px solid #707070; ">
-
             </div>
              <div style="margin:0 auto; width: 490px;">
                 <table width="100%" cellpadding="5px">
@@ -98,7 +96,11 @@
 
                 <div class="button_register"> 
                     
+<<<<<<< HEAD
                     <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="btn_register_Click" Height="50px" />
+=======
+                    <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_register_Click" />
+>>>>>>> origin/liying
                     
                 </div>
 

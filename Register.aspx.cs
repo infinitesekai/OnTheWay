@@ -19,7 +19,7 @@ namespace OnTheWay
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
-        protected void btn_register_Click(object sender, EventArgs e)
+        protected void Btn_register_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
