@@ -2,6 +2,7 @@
 .tableStyle{
     position: center;
     width: 100%;
+    margin:auto;
 }
 .button {
     background-color: #13227A;
@@ -64,7 +65,7 @@
     background-color: white;
     box-shadow:0px 4px 5px #13227A;
     height: 20em;
-    margin-left: 2.5em;
+    margin-left: 1.5em;
     padding: 1em;
     width: 15em;    
 }

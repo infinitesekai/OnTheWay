@@ -75,9 +75,9 @@
 <body>
     <form id="form1" runat="server">
         <div
-            style="padding-left: 30px; padding-right: 50px; height: 70px; background-color: white; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
-            <div id="header" style="float: right; position: relative; top: 32px; left: -4px;">
-                <ul style="margin:auto;">
+            style= "width:inherit; padding-left: 30px; padding-right: 50px; height: 70px; background-color: white; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
+            <div id="header" style="float: right; position: relative; top: 45px; left: 6px;">
+                <ul style="width:fit-content; margin:auto;">
                     <li><a runat="server" href="~/">Home</a></li>
                     <li class="dropdown">
                         <button class="dropdown_btn">Request <i class="fa fa-caret-down"></i></button>
@@ -106,7 +106,7 @@
                 </table>
             </div>
         </div>
-        <div>
+        <div style="width:inherit;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -115,10 +115,12 @@
     <!--footer-->
     <!--absolute or fixed position, not moving while scrolling-->
     <div
-        style="line-height: 25px; margin-top: 0px; font-weight: 900; text-align: center; font-family: 'Space Grotesk'; font-size: 20px; background-color: #13227A; padding: 15px; color: white;">
+        style="width:inherit; line-height: 25px; margin-top: 0px; font-weight: 900; text-align: center; font-family: 'Space Grotesk'; font-size: 20px; background-color: #13227A; padding: 15px; color: white;">
         <br />
-        <p>&copy; <%: DateTime.Now.Year %>, Xiamen University Malaysia</p><br />
+        <p>&copy; <%: DateTime.Now.Year %>, Xiamen University Malaysia</p>
         OnTheWay Development Team
     </div>
+
+<script src="./JS/PrintingService.js"></script>
 </body>
 </html>
