@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div
-    style="width:fit-content; position:relative;top:1.5px;padding-right:30px;height:350px; background-color:white;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
-    <table width="fit-content">
+    style="width:100%; position:relative;top:1.5px;padding-right:30px;height:350px; background-color:white;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
+    <table width="100%">
       <tr>
         <td width="fit-content">
           <table width="100%">

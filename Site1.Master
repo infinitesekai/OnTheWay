@@ -78,7 +78,7 @@
             style= "width:inherit; padding-left: 30px; padding-right: 50px; height: 70px; background-color: white; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
             <div id="header" style="float: right; position: relative; top: 45px; left: 6px;">
                 <ul style="width:fit-content; margin:auto;">
-                    <li><a runat="server" href="~/">Home</a></li>
+                    <li><a runat="server" href="homepage.aspx">Home</a></li>
                     <li class="dropdown">
                         <button class="dropdown_btn">Request <i class="fa fa-caret-down"></i></button>
                         <div class="dd-content">
@@ -88,7 +88,8 @@
                         </div>
                     </li>
                     <li><a runat="server" href="~/Mission"> Mission </a></li>
-                    <li>Logout</li>
+                     <li><a runat="server" href="~/MyRequest"> My Request </a></li>
+                    <li><a runat="server" href="Login.aspx">Logout</a></li> 
                 </ul>
 
             </div>

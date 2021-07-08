@@ -58,7 +58,7 @@
            
                 <div class="button_register"> 
                     
-                    <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="btn_register_Click" />
+                    <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_register_Click" />
                     
                 </div>
 
