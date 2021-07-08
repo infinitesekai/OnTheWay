@@ -52,7 +52,7 @@ namespace OnTheWay
         {
 
 
-            Server.Transfer("Register.aspx");
+            Response.Redirect("~/Register.aspx");
 
         }
     }

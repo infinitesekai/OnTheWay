@@ -96,11 +96,9 @@
 
                 <div class="button_register"> 
                     
-<<<<<<< HEAD
+
                     <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="btn_register_Click" Height="50px" />
-=======
-                    <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_register_Click" />
->>>>>>> origin/liying
+
                     
                 </div>
 
