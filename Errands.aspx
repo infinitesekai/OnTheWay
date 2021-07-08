@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Errands.aspx.cs" Inherits="OnTheWay.Errands" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <header>
-
     </header>
 
 
@@ -32,68 +32,67 @@
                     </table>
                 </div>
                 <%--<asp:Button ID="btnShow" runat="server" Text="Show Modal Popup" />--%>
-                            
-                                <asp:ScriptManager ID="ScriptManager1" runat="server">
-</asp:ScriptManager>
- 
-<!-- ModalPopupExtender -->
-<cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="RequestPop" TargetControlID="btnShow"
-    CancelControlID="btnClose" BackgroundCssClass="modalBackground">
-</cc1:ModalPopupExtender>
+
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+
+                <!-- ModalPopupExtender -->
+                <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="RequestPop" TargetControlID="btnShow"
+                    CancelControlID="btnClose" BackgroundCssClass="modalBackground">
+                </cc1:ModalPopupExtender>
 
 
-                              
-                                <asp:Panel ID="RequestPop" runat="server">
-                                    <!--the request-->
-                                    <div id="myRequest" class="requestPrinting">
-              <!--the request content-->
-              <div class="requestContent">
-                <div class="requestHeader">
-                  <span id=" cancelbtn" class="close">&times;</span>
-                  Request for Help
-                </div>
-                <div class="requestBody">
-                  <table>
-                    <tr>
-                      <td class="requester">
-                        Sarah
-                      </td>
-                    </tr>
-                  </table>
-                  <table>
-                    <tr>
-                        <td>
-                    <asp:TextBox ID="TextBox1" name="titlePrinting" class="titleInput"  runat="server"
-                                placeholder="Title/Subject:"></asp:TextBox>
-                        </td>
-                            </tr>
-                    <tr>
-                        <td>
-                            <asp:TextBox ID="TextBox2" name="descriptionInput" class="desInput" runat="server" Rows="8"
-                                placeholder="Describe your request:" ></asp:TextBox>
-                    </td>
-                            </tr>
-                    <tr>
-<td>
-                 <asp:Button ID="SubmitBtn" runat="server" class="buttonSubmit"
-                     Text="Submit" OnClick="UpdateBtn_Click" />
-     </td>                
-    </tr>
-                      
-                  
-                          </table>
-                </div>
-              </div>
+
+                <asp:Panel ID="RequestPop" runat="server">
+                    <!--the request-->
+                    <div id="myRequest" class="requestPrinting">
+                        <!--the request content-->
+                        <div class="requestContent">
+                            <div class="requestHeader">
+                                <span id=" cancelbtn" class="close">&times;</span>
+                                Request for Help
+                            </div>
+                            <div class="requestBody">
+                                <table>
+                                    <tr>
+                                        <td class="requester">Sarah
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="TextBox1" name="titlePrinting" class="titleInput" runat="server"
+                                                placeholder="Title/Subject:"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="TextBox2" name="descriptionInput" class="desInput" runat="server" Rows="8"
+                                                placeholder="Describe your request:"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Button ID="SubmitBtn" runat="server" class="buttonSubmit"
+                                                Text="Submit" OnClick="UpdateBtn_Click" />
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </asp:Panel>
+                <!-- ModalPopupExtender -->
             </div>
-                                </asp:Panel>
-                                <!-- ModalPopupExtender -->
-            </div>
 
-            
+
 
             <asp:ListView ID="requestList" runat="server"
                 DataKeyNames="RequestID" GroupItemCount="3"
-                ItemType="OnTheWay.Models.Request" SelectMethod="GetRequest" OnSelectedIndexChanged="requestList_SelectedIndexChanged" style="margin-right: 0px">
+                ItemType="OnTheWay.Models.Request" SelectMethod="GetRequest" OnSelectedIndexChanged="requestList_SelectedIndexChanged" Style="margin-right: 0px">
                 <EmptyDataTemplate>
                     <table>
                         <tr>
@@ -136,7 +135,7 @@
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <table style="margin:auto;">
+                    <table style="margin: auto;">
                         <tbody>
                             <tr>
                                 <td>
@@ -145,7 +144,7 @@
                                     </table>
                                 </td>
                             </tr>
-                           
+
                         </tbody>
                     </table>
                 </LayoutTemplate>
