@@ -92,6 +92,7 @@
     <Content Include="images\Welcome.gif" />
     <Content Include="JS\PrintingService.js" />
     <Content Include="Register.aspx" />
+    <Content Include="RequestPop.aspx" />
     <Content Include="Web.config" />
     <Content Include="Mission.aspx" />
     <Content Include="MyRequest.aspx" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestPop.aspx.cs">
+      <DependentUpon>RequestPop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestPop.aspx.designer.cs">
+      <DependentUpon>RequestPop.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

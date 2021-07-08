@@ -1,32 +1,48 @@
 
-.buttonMiddle{
-    background-color:#d8d4d4;
-    border:none;
+.buttonMiddle {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: #d8d4d4;
     border-radius: 5px;
-    color:#6b6666; 
+    color: #6b6666;
     cursor: pointer;
-    height: 45px;
-    float: left;
     font-family: Space Grotesk;
-    font-size:1.2em;
-    margin: 0 auto;
-    padding-top: 5px;
-    text-align:center;  
-    width:18em; 
-}
+    font-size: 1.2em;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    }
 .buttonMiddle:hover {
     background-color: #8d8c8c;
     color: white;
 }
-.middle{
-    margin: 0px auto auto 0px;
+
+/*the close button*/
+.close {
+    color: #1FB6B9;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+    .close:hover {
+        cursor: hand;
+    }
+
+    .close:focus {
+        color: gray;
+        text-decoration: none;
+    }
+
+.middle {
+    margin: auto auto auto auto;
     border-radius: 5px;
     background-color: white;
-    box-shadow:0px 4px 5px #707070;
+    box-shadow: 0px 4px 5px #707070;
     position: relative;
-    width: 22.4em;
-    top: -2px;
-    left: 318px;
+    width: 22.2em;
+    height: 45px;
 }
 .imageMiddle{
     display: block;
@@ -36,6 +52,46 @@
     padding: 1em;
     width: 4.5em;
     float: right;
+}
+.centerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.requestHeader {
+    padding: 16px;
+    background-color: white;
+    color: #13227A;
+    border-radius: 5px;
+    height: 10%;
+    text-align: center;
+    font-family: Space Grotesk;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.requestContent {
+    position: fixed;
+    /*border-radius: 5px;*/
+    /*box-shadow: 0px 4px 5px #707070;*/
+   /* left: 23em;*/
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    /*top: 5em;*/
+    /*width: 100%;*/
+    
+}
+.requestBody {
+    padding: 2px 16px;
+    height: 90%;
+}
+
+.requester {
+    font-size: 18px;
+    color: #707070;
+    font-weight: bold;
+    font-family: Space Grotesk;
 }
 .title {
     color: #13227A;
@@ -59,4 +115,25 @@
     margin:10px auto; 
     padding-left:30px;
     padding-right:50px;
+}
+
+.modalBackround {
+    background-color: black;
+    filter: blur(5px) !important;
+    opacity: 0.6 !important;
+    z-index: 20;
+}
+
+.modalPopup {
+    padding: 10px;
+    position: relative;
+    width: 600px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px #707070;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.7s;
+    animation-name: slideIn;
+    animation-duration: 0.7s;
 }
