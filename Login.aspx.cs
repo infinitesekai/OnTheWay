@@ -35,7 +35,12 @@ namespace OnTheWay
             cmd.ExecuteNonQuery();
             if (dt.Rows.Count > 0)
             {
+                Session["id"] = Convert.ToInt32(dt.Rows[0]["id"]);
+                System.Diagnostics.Debug.WriteLine(Session["id"]);
                 Server.Transfer("homepage.aspx");
+                
+
+
             }
             else
             {
