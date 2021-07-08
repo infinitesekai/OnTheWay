@@ -83,16 +83,10 @@
                 background-color: #707070;
             }
             .button_register{
-                background-color:#13227A;
-                color:white; 
-                font-family: Space Grotesk;
-                font-weight:800; 
-                font-size:1.2em;
+                
                 margin: 30px auto;
                 padding:10px; 
                 text-align:center;  
-                width:5em; 
-                height: 30px;
                 border-radius: 5px;
                 cursor: hand;
             }
