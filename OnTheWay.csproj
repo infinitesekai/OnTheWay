@@ -70,6 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\OTW.mdf" />
+    <Content Include="App_Data\OTW_log.ldf">
+      <DependentUpon>OTW.mdf</DependentUpon>
+    </Content>
     <Content Include="CSS\dropdown.css" />
     <Content Include="CSS\printing.css" />
     <Content Include="CSS\style.css" />
@@ -92,6 +96,8 @@
     <Content Include="Mission.aspx" />
     <Content Include="MyRequest.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Errands.aspx.cs">
@@ -151,6 +157,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errands.aspx.cs">
+      <DependentUpon>Errands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errands.aspx.designer.cs">
+      <DependentUpon>Errands.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -201,5 +221,12 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
+</Target>
   -->
 </Project>
