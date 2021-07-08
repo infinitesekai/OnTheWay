@@ -15,27 +15,10 @@ namespace OnTheWay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //connect to DB
-            //SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-
-            //conn.Open();
-
-            //SqlCommand command = new SqlCommand("Select * from post", conn);
-            //SqlDataAdapter da = new SqlDataAdapter("Select * from post", conn);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "FillComent");
-            //ListView1.DataSource = ds.Tables["FillComent "];
-            //ListView1.DataBind();
-
-            //using (SqlDataReader reader = command.ExecuteReader())
-            //{
-            //    if (reader.Read())
-            //    {
-            //        Console.WriteLine(String.Format("{0}", reader["id"]));
-            //    }
-            //}
-
-            //conn.Close();
+            if (!IsPostBack)
+            {
+                PostListView();
+            }
         }
         private void PostListView()
         {
@@ -43,7 +26,7 @@ namespace OnTheWay
             using (SqlConnection con = new SqlConnection(CS))
             {
 
-                SqlCommand cmd = new SqlCommand("SELECT title, content, poster_uid from [Post]", con);
+                SqlCommand cmd = new SqlCommand("GetAllPost", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 requestList.DataSource = cmd.ExecuteReader();
