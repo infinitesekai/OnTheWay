@@ -149,7 +149,7 @@
         <table width="100%" style="text-align: left" cellpadding="3px">
             <tr style="background-color: #F8F8F8;">
                 <td style="display: inline-block; padding: 10px">
-                    <img class="title-icon" src="./Photo/system_pending_line.png" />
+                    <img class="title-icon" src="images/system_pending_fill.png" />
                 </td>
 
                 <td style="display: inline-block; padding: 10px">
@@ -165,9 +165,8 @@
 
         <section>
 
-            <asp:ListView ID="missionList" runat="server"
-                DataKeyNames="MissionID" GroupItemCount="1"
-                ItemType="OnTheWay.Models.Mission" SelectMethod="GetMission" OnSelectedIndexChanged="missionList_SelectedIndexChanged">
+            <asp:ListView ID="MissionList" runat="server"
+                GroupItemCount="1" OnItemCommand="MissionList_ItemCommand" DataKeyNames="post_id">
                 <EmptyDataTemplate>
                     <table>
                         <tr>
@@ -192,27 +191,27 @@
                                         <td width="10%">
 
                                             <div class="name">
-                                                Michael
-		
+                                                <asp:Label ID="Postid" runat="server" Visible="false"><%#Eval("post_id") %></asp:Label>
+                                                <%#Eval("poster_uid") %>
                                             </div>
                                         </td>
 
 
-                                        <td width="40%">Clean my room</td>
+                                        <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;">Cleaning</td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
 
-                                        <td width="10%" style="text-align: center;">19-11-2020</td>
+                                        <td width="15%" style="text-align: center;"><%#Eval("creation_date") %></td>
 
                                         <td width="15%">
                                             <div>
-                                                <asp:Button ID="CancelMisBtn" runat="server" class="button_cancel" Text="Cancel" OnClick="CancelMisBtn_Click" />
+                                                <asp:Button ID="CancelMisBtn" runat="server" class="button_cancel" Text="Cancel" CommandName="cancel" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
                                             </div>
                                         </td>
 
                                         <td width="15%">
                                             <div>
-                                                <asp:Button ID="CompleteMisBtn" runat="server" class="button_complete" Text="Complete" OnClick="CompleteMisBtn_Click" />
+                                                <asp:Button ID="CompleteMisBtn" runat="server" class="button_complete" Text="Complete" CommandName="complete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
 
                                             </div>
                                         </td>
@@ -251,7 +250,7 @@
         <table width="100%" style="text-align: left" cellpadding="3px">
             <tr style="background-color: #F8F8F8;">
                 <td style="display: inline-block; padding: 10px">
-                    <img class="title-icon" src="./Photo/complete.png" />
+                    <img class="title-icon" src="images/complete.png" />
                 </td>
 
                 <td style="display: inline-block; padding: 10px">
@@ -265,9 +264,9 @@
         </table>
         <section>
 
-            <asp:ListView ID="ListView2" runat="server"
-                DataKeyNames="CompletedMissionID" GroupItemCount="1"
-                ItemType="OnTheWay.Models.CompletedMission" SelectMethod="GetCompletedMission" OnSelectedIndexChanged="CompletedMissionList_SelectedIndexChanged">
+              <asp:ListView ID="CompletedmissionList" runat="server"
+                 GroupItemCount="1"
+                >
                 <EmptyDataTemplate>
                     <table>
                         <tr>
@@ -293,17 +292,17 @@
 
 
                                             <div class="name">
-                                                Erik
+                                                <%#Eval("poster_uid") %>
                                             </div>
 
                                         </td>
 
 
-                                        <td width="40%">Buying music score</td>
+                                         <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;">Errands</td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
 
-                                        <td width="10%" style="text-align: center;">18-11-2020</td>
+                                         <td width="15%" style="text-align: center;"><%#Eval("creation_date") %></td>
 
                                         <td width="15%"></td>
 
