@@ -88,7 +88,8 @@
                         </div>
                     </li>
                     <li><a runat="server" href="~/Mission"> Mission </a></li>
-                    <li>Logout</li>
+                     <li><a runat="server" href="MyRequest.aspx"> My Request </a></li>
+                    <li><a runat="server" href="Logout.aspx">Logout</a></li> 
                 </ul>
 
             </div>

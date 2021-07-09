@@ -39,11 +39,12 @@
                 </table>
 
                 <div class="button_login"> 
-                    Login
+                    <asp:Button ID="btn_login" runat="server" Text="Login" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_login_Click" />
                 </div>
 
                 <div class="button_register"> 
-                    Register
+                  <asp:Button ID="registerbtn" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_newregister_Click" />
+
                 </div>
 
 
