@@ -14,8 +14,8 @@ namespace OnTheWay
     public partial class Errands : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
+        {   
+                if (!IsPostBack)
             {
                 PostListView();
             }
@@ -25,9 +25,10 @@ namespace OnTheWay
             string CS = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(CS))
             {
-
-                SqlCommand cmd = new SqlCommand("GetAllPost", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                string selectQuery = "SELECT title, content, poster_uid from [Post] where types= 'Errands'";
+                int poster_uid = (int)Session["id"];
+                SqlCommand cmd = new SqlCommand(selectQuery, con);
+                //cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 requestList.DataSource = cmd.ExecuteReader();
                 requestList.DataBind();
@@ -56,6 +57,9 @@ namespace OnTheWay
         {
 
         }
-       
+        protected void RefreshPage_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Errands.aspx");
+        }
     }
 }

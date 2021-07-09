@@ -178,7 +178,7 @@
 
                                         <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("types") %></td>
 
                                         <td width="15%" style="text-align: center;"><%#Eval("creation_date") %>
                                         </td>

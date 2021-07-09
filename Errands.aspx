@@ -34,7 +34,7 @@
                 <iframe style="width: 600px; height: 410px;" frameborder="0" id="irm1" src="RequestPop.aspx" runat="server"></iframe>
                  
                 <br />
-                <asp:Button ID="Button2" runat="server" class="buttonCancel" Text="Close" />
+                <asp:Button ID="Button2" runat="server" class="buttonCancel" Text="Close" OnClick="RefreshPage_Click"/>
 
             </asp:Panel>
             <!-- ModalPopupExtender -->

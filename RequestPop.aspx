@@ -22,7 +22,7 @@
                             <div class="requestBody">
                                 <table>
                                     <tr>
-                                        <td class="requester">Sarah
+                                        <td class="requester">
                                         </td>
                                     </tr>
                                 </table>
