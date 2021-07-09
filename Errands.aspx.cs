@@ -13,6 +13,7 @@ namespace OnTheWay
 {
     public partial class Errands : System.Web.UI.Page
     {
+        public int current_poster;
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["type"] = "Errands";
@@ -27,12 +28,16 @@ namespace OnTheWay
             using (SqlConnection con = new SqlConnection(CS))
             {
                 string selectQuery = "SELECT * from [Post] where types= 'Errands' and status=1";
-          
+                
                 SqlCommand cmd = new SqlCommand(selectQuery, con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 ErrandsList.DataSource = cmd.ExecuteReader();
                 ErrandsList.DataBind();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+               
             }
         }
 
@@ -72,18 +77,49 @@ namespace OnTheWay
             using (SqlConnection con = new SqlConnection(CS))
             {
                 con.Open();
+
+
                 string help = "update [Post] set status=2, helper_uid='" + Session["id"] + "',helper_uname='"+Session["uname"]+"' where post_id= @post_id ";
+                string check = "SELECT poster_uid from [Post] where post_id= @post_id ";
 
 
-                using (SqlCommand cmd = new SqlCommand(help, con))
+                DataTable dt = new DataTable();
+
+                using (SqlCommand cmd = new SqlCommand(check, con))
                 {
                     cmd.Parameters.AddWithValue("@post_id", post_id);
                     cmd.ExecuteNonQuery();
+
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                   
+                    sda.Fill(dt);
                 }
+
+                System.Diagnostics.Debug.WriteLine(Convert.ToInt32(dt.Rows[0]["poster_uid"]));
+                if (Convert.ToInt32(dt.Rows[0]["poster_uid"]) == Convert.ToInt32(Session["id"]))
+                {
+                    Response.Write("<script>alert('You need helpers!')</script>");
+                   
+                }
+                
+                using(SqlCommand cmd = new SqlCommand(help, con))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@post_id", post_id);
+                    cmd.ExecuteNonQuery();
+                    
+
+                }
+
+
+               
 
                 con.Close();
                 PostListView();
                 Response.Redirect("Mission.aspx");
+
+
+
 
             }
         }

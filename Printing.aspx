@@ -1,16 +1,53 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Printing.aspx.cs" Inherits="OnTheWay.Printing" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-                
-    
-    <asp:ListView ID="requestList" runat="server" GroupItemCount="3"
-                DataKeyNames="RequestID" 
-                ItemType="OnTheWay.Models.Request" SelectMethod="GetRequest" OnSelectedIndexChanged="requestList_SelectedIndexChanged" Style="margin-right: 0px">
+    <header>
+        
+    </header>
+
+
+    <section>
+        <div>
+            <div class="printingWhole">
+                <table width="100%">
+                    <tr>
+                        <td width="0.5%">
+                            <img class="printing" src="./images/print.png" />
+                        </td>
+                        <td class="titleMain" width="98.5%">Printing
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="centerBtn">
+                <asp:Button ID="btnShow" runat="server" CssClass="buttonMiddle middle"
+                    Text="Want to request some help?" OnClick="ShowBtn_Click" />
+
+                <%--<asp:Button ID="btnShow" runat="server" Text="Show Modal Popup" />--%>
+            </div>
+
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:Panel ID="RequestPop" runat="server" align="center" CssClass="modalPopup">
+                <iframe style="width: 600px; height: 410px;" frameborder="0" id="irm1" src="RequestPop.aspx" runat="server"></iframe>
+                 
+                <br />
+                <asp:Button ID="Button2" runat="server" class="buttonCancel" Text="Close" OnClick="RefreshPage_Click"/>
+
+            </asp:Panel>
+            <!-- ModalPopupExtender -->
+            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="RequestPop" TargetControlID="btnShow"
+                CancelControlID="Button2" BackgroundCssClass="modalBackround">
+            </cc1:ModalPopupExtender>
+
+            <asp:ListView ID="PrintingList" runat="server" GroupItemCount="3"
+                Style="margin-right: 0px" OnItemCommand="PrintingList_ItemCommand" DataKeyNames="post_id">
                 <EmptyDataTemplate>
                     <table>
-                        <tr>
-                            <td>No data was returned.</td>
+                        <tr style="text-align:center;">
+                            <td class="name" >No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -31,15 +68,15 @@
                                         <td class="table">
                                             <div class="request">
                                                 <div class="name">
-                                                    <b>Emily</b>
+                                                   <b><%#Eval("poster_uname") %></b>
                                                 </div>
                                                 <div class="title">
-                                                    Title: Printing
+                                                    <%#Eval("title") %>
                                                 </div>
                                                 <div class="description">
-                                                    Urgent! Need somebody help me print notes. Thanks!
+                                                    <%#Eval("content")%>
                                                 </div>
-                                                <asp:Button ID="HelpBtn" runat="server" class="button" Text="Help" OnClick="UpdateBtn_Click" />
+                                                <asp:Button ID="HelpBtn" runat="server" class="button" Text="Help" CommandName="help" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
                                             </div>
                                         </td>
                                     </tr>
@@ -54,7 +91,8 @@
                             <tr>
                                 <td>
                                     <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
-                                        <tr id="groupPlaceholder"></tr>
+                                        <tr id="groupPlaceholder">
+                                        </tr>
                                     </table>
                                 </td>
                             </tr>
@@ -63,5 +101,8 @@
                     </table>
                 </LayoutTemplate>
             </asp:ListView>
-
+            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Post]"></asp:SqlDataSource>--%>
+        </div>
+    </section>
+    <script src="./JS/PrintingService.js"></script>
 </asp:Content>

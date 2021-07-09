@@ -17,7 +17,7 @@ namespace OnTheWay
         }
         protected void SubmitBtn_Click(object sender, EventArgs e)
         {
-            
+
             
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
@@ -29,8 +29,9 @@ namespace OnTheWay
             cmd.Parameters.AddWithValue("@poster_uid", Session["id"]);
             cmd.Parameters.AddWithValue("@poster_uname", Session["uname"]);
             cmd.Parameters.AddWithValue("@status", "1");
-            cmd.Parameters.AddWithValue("@creation_date", Convert.ToDateTime("11/01/2021"));
+            cmd.Parameters.AddWithValue("@creation_date", DateTime.Now);
             cmd.ExecuteNonQuery();
+            //DateTime.Now.ToString("dd-mm-yyyy")
 
             con.Close();
         }
