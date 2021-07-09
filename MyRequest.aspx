@@ -144,7 +144,7 @@
         <section>
 
             <asp:ListView ID="ToCompleterequestList" runat="server"
-                GroupItemCount="1" OnItemCommand="ToCompleterequestList_ItemCommand" 
+                GroupItemCount="1" OnItemCommand="ToCompleterequestList_ItemCommand" DataKeyNames="post_id"
                 >
                 <EmptyDataTemplate>
                     <table>
@@ -185,7 +185,7 @@
 
                                         <td width="15%">
                                             <div>
-                                                <asp:Button ID="CancelReqBtn" runat="server" class="button_cancel" Text="Cancel" CommandName="delete" />
+                                                <asp:Button ID="CancelReqBtn" runat="server" class="button_cancel" Text="Cancel" CommandName="delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
                                             </div>
                                         </td>
                                     </tr>
@@ -265,16 +265,16 @@
                                         <td width="10%">
 
                                             <div class="name">
-                                                Romeo
+                                                <%#Eval("helper_uid") %>
                                             </div>
                                         </td>
 
 
-                                        <td width="40%">Cleaning window</td>
+                                        <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;">Cleaning</td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
 
-                                        <td width="15%" style="text-align: center;">19-11-2020
+                                        <td width="15%" style="text-align: center;"><%#Eval("creation_date") %>
                                         </td>
 
                                         <td width="15%"></td>
