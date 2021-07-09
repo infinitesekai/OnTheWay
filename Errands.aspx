@@ -42,12 +42,12 @@
                 CancelControlID="Button2" BackgroundCssClass="modalBackround">
             </cc1:ModalPopupExtender>
 
-            <asp:ListView ID="requestList" runat="server" GroupItemCount="3"
-                Style="margin-right: 0px">
+            <asp:ListView ID="ErrandsList" runat="server" GroupItemCount="3"
+                Style="margin-right: 0px" OnItemCommand="ErrandsList_ItemCommand" DataKeyNames="post_id">
                 <EmptyDataTemplate>
                     <table>
-                        <tr>
-                            <td>No data was returned.</td>
+                        <tr style="text-align:center;">
+                            <td class="name" >No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -68,7 +68,7 @@
                                         <td class="table">
                                             <div class="request">
                                                 <div class="name">
-                                                    <b><%#Eval("poster_uid") %></b>
+                                                   <b><%#Eval("poster_uname") %></b>
                                                 </div>
                                                 <div class="title">
                                                     <%#Eval("title") %>
@@ -76,7 +76,7 @@
                                                 <div class="description">
                                                     <%#Eval("content")%>
                                                 </div>
-                                                <asp:Button ID="HelpBtn" runat="server" class="button" Text="Help" OnClick="HelpBtn_Click" />
+                                                <asp:Button ID="HelpBtn" runat="server" class="button" Text="Help" CommandName="help" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
                                             </div>
                                         </td>
                                     </tr>

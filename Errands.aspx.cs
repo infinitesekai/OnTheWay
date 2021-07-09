@@ -14,8 +14,9 @@ namespace OnTheWay
     public partial class Errands : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {   
-                if (!IsPostBack)
+        {
+            Session["type"] = "Errands";
+            if (!IsPostBack)
             {
                 PostListView();
             }
@@ -25,29 +26,16 @@ namespace OnTheWay
             string CS = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(CS))
             {
-                string selectQuery = "SELECT title, content, poster_uid from [Post] where types= 'Errands'";
-                int poster_uid = (int)Session["id"];
+                string selectQuery = "SELECT * from [Post] where types= 'Errands' and status=1";
+          
                 SqlCommand cmd = new SqlCommand(selectQuery, con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
-                requestList.DataSource = cmd.ExecuteReader();
-                requestList.DataBind();
+                ErrandsList.DataSource = cmd.ExecuteReader();
+                ErrandsList.DataBind();
             }
         }
 
-        //public IQueryable<Post> GetPosts(
-        //                    [QueryString("type")] string type)
-
-        //{
-        //    var _db = new OnTheWay.Models.PostContext();
-        //    IQueryable<Post> query = _db.Posts;
-
-        //    if (type!=null)
-        //    {
-        //        query = query.Where(p => p.type == "Errands");
-        //    }
-        //    return query;
-        //}
         protected void ShowBtn_Click(object sender, EventArgs e)
         {
 
@@ -60,6 +48,44 @@ namespace OnTheWay
         protected void RefreshPage_Click(object sender, EventArgs e)
         {
             Server.Transfer("Errands.aspx");
+        }
+
+
+
+        protected void ErrandsList_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+
+            switch (e.CommandName)
+            {
+                case ("help"):
+                    int post_id = Convert.ToInt32(e.CommandArgument);
+                    Help(post_id);
+                    break;
+
+            }
+        }
+
+        void Help(int post_id)
+        {
+
+            string CS = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                con.Open();
+                string help = "update [Post] set status=2, helper_uid='" + Session["id"] + "',helper_uname='"+Session["uname"]+"' where post_id= @post_id ";
+
+
+                using (SqlCommand cmd = new SqlCommand(help, con))
+                {
+                    cmd.Parameters.AddWithValue("@post_id", post_id);
+                    cmd.ExecuteNonQuery();
+                }
+
+                con.Close();
+                PostListView();
+                Response.Redirect("Mission.aspx");
+
+            }
         }
     }
 }

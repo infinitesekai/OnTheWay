@@ -83,8 +83,8 @@
                     <li class="dropdown">
                         <button class="dropdown_btn">Request <i class="fa fa-caret-down"></i></button>
                         <div class="dd-content">
-                            <a runat="server" href="~/Cleaning">Cleaning</a>
-                            <a runat="server" href="~/Printing">Printing</a>
+                            <a runat="server" href="~/Cleaning.aspx">Cleaning</a>
+                            <a runat="server" href="~/Printing.aspx">Printing</a>
                             <a runat="server" href="~/Errands.aspx">Errands</a>
                         </div>
                     </li>

@@ -170,7 +170,7 @@
                 <EmptyDataTemplate>
                     <table>
                         <tr>
-                            <td>No data was returned.</td>
+                            <td class="name">No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -192,14 +192,14 @@
 
                                             <div class="name">
                                                 <asp:Label ID="Postid" runat="server" Visible="false"><%#Eval("post_id") %></asp:Label>
-                                                <%#Eval("poster_uid") %>
+                                                <%#Eval("poster_uname") %>
                                             </div>
                                         </td>
 
 
                                         <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("types") %></td>
 
                                         <td width="15%" style="text-align: center;"><%#Eval("creation_date") %></td>
 
@@ -270,7 +270,7 @@
                 <EmptyDataTemplate>
                     <table>
                         <tr>
-                            <td>No data was returned.</td>
+                            <td class="name">No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -292,7 +292,7 @@
 
 
                                             <div class="name">
-                                                <%#Eval("poster_uid") %>
+                                                <%#Eval("poster_uname") %>
                                             </div>
 
                                         </td>
@@ -300,7 +300,7 @@
 
                                          <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("types") %></td>
 
                                          <td width="15%" style="text-align: center;"><%#Eval("creation_date") %></td>
 

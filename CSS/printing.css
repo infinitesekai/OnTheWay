@@ -137,3 +137,14 @@
     animation-name: slideIn;
     animation-duration: 0.7s;
 }
+
+.titleMain {
+    color: #13227A;
+    font-family: 'Space Grotesk';
+    font-size: 40px;
+    font-weight: 900;
+    padding: 5px;
+    padding-top: 15px;
+    padding-left: 70px;
+    text-align: left;
+}

@@ -149,7 +149,7 @@
                 <EmptyDataTemplate>
                     <table>
                         <tr>
-                            <td>No data was returned.</td>
+                            <td class="name">No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -171,7 +171,7 @@
 
                                             <div class="name">
                                                 <asp:Label ID="Postid" runat="server" Visible="false"><%#Eval("post_id") %></asp:Label>
-                                                <%#Eval("helper_uid") %>
+                                                <%#Eval("helper_uname") %>
                                             </div>
                                         </td>
 
@@ -244,7 +244,7 @@
                 <EmptyDataTemplate>
                     <table>
                         <tr>
-                            <td>No data was returned.</td>
+                            <td class="name">No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -265,14 +265,14 @@
                                         <td width="10%">
 
                                             <div class="name">
-                                                <%#Eval("helper_uid") %>
+                                                <%#Eval("helper_uname") %>
                                             </div>
                                         </td>
 
 
                                         <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("types") %></td>
 
                                         <td width="15%" style="text-align: center;"><%#Eval("creation_date") %>
                                         </td>

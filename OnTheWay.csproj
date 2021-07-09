@@ -74,6 +74,7 @@
     <Content Include="App_Data\OTW_log.ldf">
       <DependentUpon>OTW.mdf</DependentUpon>
     </Content>
+    <Content Include="Cleaning.aspx" />
     <Content Include="CSS\dropdown.css" />
     <Content Include="CSS\printing.css" />
     <Content Include="CSS\style.css" />
@@ -102,6 +103,13 @@
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cleaning.aspx.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cleaning.aspx.designer.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Errands.aspx.cs">
       <DependentUpon>Errands.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

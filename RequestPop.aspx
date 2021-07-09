@@ -20,12 +20,7 @@
                                 Request for Help
                             </div>
                             <div class="requestBody">
-                                <table>
-                                    <tr>
-                                        <td class="requester">
-                                        </td>
-                                    </tr>
-                                </table>
+                           
                                 <table width="100%">
                                     <tr>
                                         <td>
