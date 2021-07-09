@@ -128,7 +128,7 @@
         <table width="100%" style="text-align: left" cellpadding="3px">
             <tr style="background-color: #F8F8F8;">
                 <td style="display: inline-block; padding: 10px">
-                    <img class="title-icon" src="./Photo/system_pending_line.png" />
+                    <img class="title-icon" src="images/system_pending_fill.png" />
                 </td>
 
                 <td style="display: inline-block; padding: 10px">
@@ -143,9 +143,9 @@
 
         <section>
 
-            <asp:ListView ID="completedrequestList" runat="server"
-                DataKeyNames="completedrequestID" GroupItemCount="1"
-                ItemType="OnTheWay.Models.completedrequest" SelectMethod="Getcompletedrequest" OnSelectedIndexChanged="completedrequestList_SelectedIndexChanged">
+            <asp:ListView ID="ToCompleterequestList" runat="server"
+                GroupItemCount="1" OnItemCommand="ToCompleterequestList_ItemCommand" DataKeyNames="post_id"
+                >
                 <EmptyDataTemplate>
                     <table>
                         <tr>
@@ -170,22 +170,22 @@
                                         <td width="10%">
 
                                             <div class="name">
-                                                Marius
+                                                <asp:Label ID="Postid" runat="server" Visible="false"><%#Eval("post_id") %></asp:Label>
+                                                <%#Eval("helper_uid") %>
                                             </div>
                                         </td>
 
 
-                                        <td width="40%">Buy Chocolate</td>
+                                        <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;">Errands</td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
 
-                                        <td width="15%" style="text-align: center;">19-11-2020
+                                        <td width="15%" style="text-align: center;"><%#Eval("creation_date") %>
                                         </td>
-
 
                                         <td width="15%">
                                             <div>
-                                                <asp:Button ID="CancelReqBtn" runat="server" class="button_cancel" Text="Cancel" OnClick="CancelReqBtn_Click" />
+                                                <asp:Button ID="CancelReqBtn" runat="server" class="button_cancel" Text="Cancel" CommandName="delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
                                             </div>
                                         </td>
                                     </tr>
@@ -223,7 +223,7 @@
         <table width="100%" style="text-align: left" cellpadding="3px">
             <tr style="background-color: #F8F8F8;">
                 <td style="display: inline-block; padding: 10px">
-                    <img class="title-icon" src="./Photo/complete.png" />
+                    <img class="title-icon" src="images/complete.png" />
                 </td>
 
                 <td style="display: inline-block; padding: 10px">
@@ -238,9 +238,9 @@
 
         <section>
 
-            <asp:ListView ID="ListView2" runat="server"
-                DataKeyNames="CompletedMissionID" GroupItemCount="1"
-                ItemType="OnTheWay.Models.CompletedMission" SelectMethod="GetCompletedMission" OnSelectedIndexChanged="CompletedMissionList_SelectedIndexChanged">
+            <asp:ListView ID="CompletedrequestList" runat="server"
+                 GroupItemCount="1"
+                >
                 <EmptyDataTemplate>
                     <table>
                         <tr>
@@ -265,16 +265,16 @@
                                         <td width="10%">
 
                                             <div class="name">
-                                                Romeo
+                                                <%#Eval("helper_uid") %>
                                             </div>
                                         </td>
 
 
-                                        <td width="40%">Cleaning window</td>
+                                        <td width="40%"><%#Eval("title") %></td>
 
-                                        <td width="10%" style="text-align: center;">Cleaning</td>
+                                        <td width="10%" style="text-align: center;"><%#Eval("type") %></td>
 
-                                        <td width="15%" style="text-align: center;">19-11-2020
+                                        <td width="15%" style="text-align: center;"><%#Eval("creation_date") %>
                                         </td>
 
                                         <td width="15%"></td>
