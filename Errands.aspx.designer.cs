@@ -33,15 +33,6 @@ namespace OnTheWay
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// mp1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mp1;
-
-        /// <summary>
         /// RequestPop control.
         /// </summary>
         /// <remarks>
@@ -51,31 +42,31 @@ namespace OnTheWay
         protected global::System.Web.UI.WebControls.Panel RequestPop;
 
         /// <summary>
-        /// TextBox1 control.
+        /// irm1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlIframe irm1;
 
         /// <summary>
-        /// TextBox2 control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// SubmitBtn control.
+        /// mp1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitBtn;
+        protected global::AjaxControlToolkit.ModalPopupExtender mp1;
 
         /// <summary>
         /// requestList control.
