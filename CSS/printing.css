@@ -72,10 +72,10 @@
 
 .requestContent {
     position: fixed;
-    /*border-radius: 5px;*/
+    border-radius: 15px;
     /*box-shadow: 0px 4px 5px #707070;*/
    /* left: 23em;*/
-    width: 100%;
+    width: 60%;
     height: fit-content;
     background-color: white;
     /*top: 5em;*/
@@ -125,17 +125,10 @@
 }
 
 .modalPopup {
-    padding: 10px;
     position: relative;
     width: 600px;
     height: fit-content;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 4px 5px #707070;
-    -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 0.7s;
-    animation-name: slideIn;
-    animation-duration: 0.7s;
+    background-color: #ffffff00;
 }
 
 .titleMain {
@@ -147,4 +140,23 @@
     padding-top: 15px;
     padding-left: 70px;
     text-align: left;
+}
+
+.requestPrinting {
+    /*display: none;*/
+    position: fixed;
+    z-index: 1; /*sit on top*/
+    left: 275px;
+    top: 155px;
+    overflow: auto; /*enable scroll if needed*/
+    /*background-color: rgba(202, 197, 197, 0.6);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;*/
+    background-color: rgba(202, 197, 197, 0.6);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }

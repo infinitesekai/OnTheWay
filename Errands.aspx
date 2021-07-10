@@ -4,7 +4,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <header>
-        
     </header>
 
 
@@ -23,7 +22,7 @@
             </div>
             <div class="centerBtn">
                 <asp:Button ID="btnShow" runat="server" CssClass="buttonMiddle middle"
-                    Text="Want to request some help?" OnClick="ShowBtn_Click" />
+                    Text="Want to request some help?"/>
 
                 <%--<asp:Button ID="btnShow" runat="server" Text="Show Modal Popup" />--%>
             </div>
@@ -31,10 +30,39 @@
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
             <asp:Panel ID="RequestPop" runat="server" align="center" CssClass="modalPopup">
-                <iframe style="width: 600px; height: 410px;" frameborder="0" id="irm1" src="RequestPop.aspx" runat="server"></iframe>
-                 
+                <%--<iframe style="width: 600px; height: 410px;" frameborder="0" id="irm1" src="RequestPopUp.aspx" runat="server"></iframe>--%>
+                <!--the request-->
+                <div id="myRequest" class="requestPrinting">
+                    <!--the request content-->
+                    <div class="requestContent">
+                        <div class="requestHeader">
+                            Request for Help
+                        </div>
+                        <div class="requestBody">
+
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <asp:TextBox ID="txtTitle" name="titlePrinting" class="titleInput" runat="server"
+                                            placeholder="Title/Subject:"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:TextBox ID="txtContent" name="descriptionInput" class="desInput" runat="server" Rows="8"
+                                            placeholder="Describe your request:"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                            <asp:Button ID="Button2" runat="server" class="buttonCancel" 
+                                Text="Close" />
+                            <asp:Button ID="SubmitBtn" runat="server" class="buttonSubmit"
+                                Text="Submit" OnClick="SubmitBtn_Click" />
+                            
+                        </div>
+                    </div>
+                </div>
                 <br />
-                <asp:Button ID="Button2" runat="server" class="buttonCancel" Text="Close" OnClick="RefreshPage_Click"/>
 
             </asp:Panel>
             <!-- ModalPopupExtender -->
@@ -46,8 +74,8 @@
                 Style="margin-right: 0px" OnItemCommand="ErrandsList_ItemCommand" DataKeyNames="post_id">
                 <EmptyDataTemplate>
                     <table>
-                        <tr style="text-align:center;">
-                            <td class="name" >No data was returned.</td>
+                        <tr style="text-align: center;">
+                            <td class="name">No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -68,7 +96,7 @@
                                         <td class="table">
                                             <div class="request">
                                                 <div class="name">
-                                                   <b><%#Eval("poster_uname") %></b>
+                                                    <b><%#Eval("poster_uname") %></b>
                                                 </div>
                                                 <div class="title">
                                                     <%#Eval("title") %>

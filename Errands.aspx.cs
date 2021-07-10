@@ -34,28 +34,35 @@ namespace OnTheWay
                 con.Open();
                 ErrandsList.DataSource = cmd.ExecuteReader();
                 ErrandsList.DataBind();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                //DataTable dt = new DataTable();
+                //sda.Fill(dt);
                
             }
         }
 
-        protected void ShowBtn_Click(object sender, EventArgs e)
+        protected void SubmitBtn_Click(object sender, EventArgs e)
         {
 
-        }
-        
-        protected void HelpBtn_Click(object sender, EventArgs e)
-        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+            string insertQuery = "insert into [Post](title, content, types, poster_uid,poster_uname, status, creation_date) values (@title,@content, @types, @poster_uid,@poster_uname, @status, @creation_date)";
+            SqlCommand cmd = new SqlCommand(insertQuery, con);
+            cmd.Parameters.AddWithValue("@title", txtTitle.Text);
+            cmd.Parameters.AddWithValue("@content", txtContent.Text);
+            cmd.Parameters.AddWithValue("@types", Session["type"]);
+            cmd.Parameters.AddWithValue("@poster_uid", Session["id"]);
+            cmd.Parameters.AddWithValue("@poster_uname", Session["uname"]);
+            cmd.Parameters.AddWithValue("@status", "1");
+            cmd.Parameters.AddWithValue("@creation_date", DateTime.Now);
+            cmd.ExecuteNonQuery();
+            //DateTime.Now.ToString("dd-mm-yyyy")
+
+            con.Close();
+            Response.Redirect("~/Errands.aspx");
 
         }
-        protected void RefreshPage_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("Errands.aspx");
-        }
-
-
 
         protected void ErrandsList_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
