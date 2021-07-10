@@ -270,12 +270,12 @@
   </div>
 
      <div
-    style=" background-color: white; margin:0 auto; margin-right:0px; box-shadow:0px 4px 5px rgba(0, 0, 0, 0.1); height:350px;text-align:center;">
+    style=" background-color: white; margin:0 auto; margin-right:0px;box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1); height:350px;text-align:center;">
     <div class="Title-font" style="padding-top:25px;margin:0px auto; display:inline-block; text-align:center;">
       <b>Services</b>
     </div>
 
-    <div style="margin:5px auto; width: 60%; text-align:center; padding:10px;">
+    <div style="margin:5px auto; width: 70%; text-align:center; padding:10px;">
       <table width="100%" cellpadding="30px">
         <tr>
           <td width="25%">
@@ -285,7 +285,7 @@
               </div>
 
               <div class="Services_font">
-                Cleaning
+                <a runat="server" href="~/Cleaning.aspx" style="text-decoration: none;">Cleaning</a>
               </div>
             </div>
           </td>
@@ -297,7 +297,7 @@
               </div>
 
               <div class="Services_font">
-                Printing
+               <a runat="server" href="~/Printing.aspx" style="text-decoration: none;"> Printing</a>
               </div>
             </div>
           </td>
@@ -309,7 +309,7 @@
               </div>
 
               <div class="Services_font">
-                Errands
+                 <a runat="server" href="~/Errands.aspx" >Errands</a>
               </div>
             </div>
           </td>
@@ -317,5 +317,76 @@
         </tr>
       </table>
     </div>
+   </div>
+
+    <div
+     style=" background-color: white; margin:0 auto; margin-right:0px; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);top:1.5px;height:auto;text-align:center;">
+        <div class="Title-font" style="padding-top:25px;margin:0px auto; display:inline-block; text-align:center;">
+          <b>Latest Requests</b>
+        </div>
+        <section>
+               <asp:ListView ID="LatestRequestList" runat="server" GroupItemCount="3"
+                Style="margin-right: 0px" OnItemCommand="LatestRequestList_ItemCommand" DataKeyNames="post_id">
+                <EmptyDataTemplate>
+                    <table>
+                        <tr style="text-align:center;">
+                            <td class="name" >No data was returned.</td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
+                <EmptyItemTemplate>
+                    <td />
+                </EmptyItemTemplate>
+                <GroupTemplate>
+                    <tr id="itemPlaceholderContainer" runat="server">
+                        <td id="itemPlaceholder" runat="server"></td>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td runat="server">
+                        <div class="requestBg">
+                            <div>
+                                <table class="tableStyle">
+                                    <tr>
+                                        <td class="table">
+                                            <div class="request">
+                                                <div class="name">
+                                                   <b><%#Eval("poster_uname") %></b>
+                                                </div>
+                                                <div class="title">
+                                                    <%#Eval("title") %>
+                                                </div>
+                                                <div class="description">
+                                                    <%#Eval("content")%>
+                                                </div>
+                                                <div style="text-align:center;">
+                                                <asp:Button ID="HelpBtn" runat="server" class="button_home" Text="Help" CommandName="help" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table style="margin: auto;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
+                                        <tr id="groupPlaceholder">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
+            </section>
+           </div>
 
 </asp:Content>
