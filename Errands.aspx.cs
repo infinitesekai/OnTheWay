@@ -86,7 +86,7 @@ namespace OnTheWay
                 con.Open();
 
 
-                string help = "update [Post] set status=2, helper_uid='" + Session["id"] + "',helper_uname='"+Session["uname"]+"' where post_id= @post_id ";
+                string help = "update [Post] set status=2, helper_uid='" + Session["id"] + "',helper_uname='" + Session["uname"] + "' where post_id= @post_id ";
                 string check = "SELECT poster_uid from [Post] where post_id= @post_id ";
 
 
@@ -98,32 +98,39 @@ namespace OnTheWay
                     cmd.ExecuteNonQuery();
 
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                   
+
                     sda.Fill(dt);
                 }
 
                 System.Diagnostics.Debug.WriteLine(Convert.ToInt32(dt.Rows[0]["poster_uid"]));
-                if (Convert.ToInt32(dt.Rows[0]["poster_uid"]) == Convert.ToInt32(Session["id"]))
+                System.Diagnostics.Debug.WriteLine(string.Compare(Convert.ToString(dt.Rows[0]["poster_uid"]), Convert.ToString(Session["id"])));
+                // if (Convert.ToString(dt.Rows[0]["poster_uid"]) == Convert.ToString(Session["id"]))
+                if ((string.Compare(Convert.ToString(dt.Rows[0]["poster_uid"]), Convert.ToString(Session["id"]))==0))
                 {
-                    Response.Write("<script>alert('You need helpers!')</script>");
-                   
+                    Response.Write("<script>alert('You need helpers! Please help others!')</script>");
+
                 }
-                
-                using(SqlCommand cmd = new SqlCommand(help, con))
-                {
-                    
-                    cmd.Parameters.AddWithValue("@post_id", post_id);
+
+                else {
+
+             
+
+                    SqlCommand cmd = new SqlCommand(help, con);
+                         cmd.Parameters.AddWithValue("@post_id", post_id);
                     cmd.ExecuteNonQuery();
-                    
+                    con.Close();
+                    PostListView();
+                    Response.Redirect("Mission.aspx");
+
 
                 }
 
 
-               
 
-                con.Close();
-                PostListView();
-                Response.Redirect("Mission.aspx");
+
+
+
+
 
 
 
