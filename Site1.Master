@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -78,13 +79,13 @@
             style= "width:inherit; padding-left: 30px; padding-right: 50px; height: 70px; background-color: white; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1);">
             <div id="header" style="float: right; position: relative; top: 45px; left: 6px;">
                 <ul style="width:fit-content; margin:auto;">
-                    <li><a runat="server" href="homepage.aspx">Home</a></li>
+                    <li><a runat="server" href="~/homepage.aspx">Home</a></li>
                     <li class="dropdown">
                         <button class="dropdown_btn">Request <i class="fa fa-caret-down"></i></button>
                         <div class="dd-content">
-                            <a runat="server" href="~/Cleaning">Cleaning</a>
-                            <a runat="server" href="~/Printing">Printing</a>
-                            <a runat="server" href="~/Errands">Errands</a>
+                            <a runat="server" href="~/Cleaning.aspx">Cleaning</a>
+                            <a runat="server" href="~/Printing.aspx">Printing</a>
+                            <a runat="server" href="~/Errands.aspx">Errands</a>
                         </div>
                     </li>
                     <li><a runat="server" href="~/Mission.aspx"> Mission </a></li>
@@ -107,7 +108,7 @@
                 </table>
             </div>
         </div>
-        <div style="width:inherit;">
+        <div style="width:inherit; min-height:700px;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -116,7 +117,7 @@
     <!--footer-->
     <!--absolute or fixed position, not moving while scrolling-->
     <div
-        style="width:inherit; line-height: 25px; margin-top: 0px; font-weight: 900; text-align: center; font-family: 'Space Grotesk'; font-size: 20px; background-color: #13227A; padding: 15px; color: white;">
+        style="line-height: 25px; margin-top: 0px; font-weight: 900; text-align: center; font-family: 'Space Grotesk'; font-size: 20px; background-color: #13227A; padding: 15px; color: white;">
         <br />
         <p>&copy; <%: DateTime.Now.Year %>, Xiamen University Malaysia</p>
         OnTheWay Development Team

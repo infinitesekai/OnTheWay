@@ -74,6 +74,7 @@
     <Content Include="App_Data\OTW_log.ldf">
       <DependentUpon>OTW.mdf</DependentUpon>
     </Content>
+    <Content Include="Cleaning.aspx" />
     <Content Include="CSS\dropdown.css" />
     <Content Include="CSS\printing.css" />
     <Content Include="CSS\style.css" />
@@ -92,6 +93,7 @@
     <Content Include="images\Welcome.gif" />
     <Content Include="JS\PrintingService.js" />
     <Content Include="Logout.aspx" />
+    <Content Include="Printing.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="Mission.aspx" />
@@ -101,6 +103,13 @@
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cleaning.aspx.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cleaning.aspx.designer.cs">
+      <DependentUpon>Cleaning.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Errands.aspx.cs">
       <DependentUpon>Errands.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,6 +130,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printing.aspx.cs">
+      <DependentUpon>Printing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printing.aspx.designer.cs">
+      <DependentUpon>Printing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

@@ -36,6 +36,7 @@ namespace OnTheWay
             if (dt.Rows.Count > 0)
             {
                 Session["id"] = Convert.ToInt32(dt.Rows[0]["id"]);
+                Session["uname"] = Convert.ToString(dt.Rows[0]["first_name"]);
                 System.Diagnostics.Debug.WriteLine(Session["id"]);
                 Server.Transfer("homepage.aspx");
                 

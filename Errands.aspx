@@ -20,83 +20,62 @@
                     </tr>
                 </table>
             </div>
-            <div style="margin: auto;">
-                <div class="middle">
-                    <table width="100%">
-                        <tr>
-                            <td>
-                                <asp:Button ID="btnShow" runat="server" class="buttonMiddle"
-                                    Text="Want to request some help?" OnClick="UpdateBtn_Click" />
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="centerBtn">
+                <asp:Button ID="btnShow" runat="server" CssClass="buttonMiddle middle"
+                    Text="Want to request some help?"/>
+
                 <%--<asp:Button ID="btnShow" runat="server" Text="Show Modal Popup" />--%>
-
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
-
-                <!-- ModalPopupExtender -->
-                <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="RequestPop" TargetControlID="btnShow"
-                    CancelControlID="btnClose" BackgroundCssClass="modalBackground">
-                </cc1:ModalPopupExtender>
-
-
-
-                <asp:Panel ID="RequestPop" runat="server">
-                    <!--the request-->
-                    <div id="myRequest" class="requestPrinting">
-                        <!--the request content-->
-                        <div class="requestContent">
-                            <div class="requestHeader">
-                                <span id=" cancelbtn" class="close">&times;</span>
-                                Request for Help
-                            </div>
-                            <div class="requestBody">
-                                <table>
-                                    <tr>
-                                        <td class="requester">Sarah
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:TextBox ID="TextBox1" name="titlePrinting" class="titleInput" runat="server"
-                                                placeholder="Title/Subject:"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:TextBox ID="TextBox2" name="descriptionInput" class="desInput" runat="server" Rows="8"
-                                                placeholder="Describe your request:"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button ID="SubmitBtn" runat="server" class="buttonSubmit"
-                                                Text="Submit" OnClick="UpdateBtn_Click" />
-                                        </td>
-                                    </tr>
-
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </asp:Panel>
-                <!-- ModalPopupExtender -->
             </div>
 
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:Panel ID="RequestPop" runat="server" align="center" CssClass="modalPopup">
+                <%--<iframe style="width: 600px; height: 410px;" frameborder="0" id="irm1" src="RequestPopUp.aspx" runat="server"></iframe>--%>
+                <!--the request-->
+                <div id="myRequest" class="requestPrinting">
+                    <!--the request content-->
+                    <div class="requestContent">
+                        <div class="requestHeader">
+                            Request for Help
+                        </div>
+                        <div class="requestBody">
 
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <asp:TextBox ID="txtTitle" name="titlePrinting" class="titleInput" runat="server"
+                                            placeholder="Title/Subject:"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:TextBox ID="txtContent" name="descriptionInput" class="desInput" runat="server" Rows="8"
+                                            placeholder="Describe your request:"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                            <asp:Button ID="Button2" runat="server" class="buttonCancel" 
+                                Text="Close" />
+                            <asp:Button ID="SubmitBtn" runat="server" class="buttonSubmit"
+                                Text="Submit" OnClick="SubmitBtn_Click" />
+                            
+                        </div>
+                    </div>
+                </div>
+                <br />
 
-            <asp:ListView ID="requestList" runat="server"
-                DataKeyNames="RequestID" GroupItemCount="3"
-                ItemType="OnTheWay.Models.Request" SelectMethod="GetRequest" OnSelectedIndexChanged="requestList_SelectedIndexChanged" Style="margin-right: 0px">
+            </asp:Panel>
+            <!-- ModalPopupExtender -->
+            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="RequestPop" TargetControlID="btnShow"
+                CancelControlID="Button2" BackgroundCssClass="modalBackround">
+            </cc1:ModalPopupExtender>
+
+            <asp:ListView ID="ErrandsList" runat="server" GroupItemCount="3"
+                Style="margin-right: 0px" OnItemCommand="ErrandsList_ItemCommand" DataKeyNames="post_id">
                 <EmptyDataTemplate>
                     <table>
-                        <tr>
-                            <td>No data was returned.</td>
+                        <tr style="text-align: center;">
+                            <td class="name">No data was returned.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -117,15 +96,15 @@
                                         <td class="table">
                                             <div class="request">
                                                 <div class="name">
-                                                    <b>Emily</b>
+                                                    <b><%#Eval("poster_uname") %></b>
                                                 </div>
                                                 <div class="title">
-                                                    Title: Printing
+                                                    <%#Eval("title") %>
                                                 </div>
                                                 <div class="description">
-                                                    Urgent! Need somebody help me print notes. Thanks!
+                                                    <%#Eval("content")%>
                                                 </div>
-                                                <asp:Button ID="HelpBtn" runat="server" class="button" Text="Help" OnClick="UpdateBtn_Click" />
+                                                <asp:Button ID="HelpBtn" runat="server" class="button" Text="Help" CommandName="help" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "post_id") %>' />
                                             </div>
                                         </td>
                                     </tr>
@@ -140,7 +119,8 @@
                             <tr>
                                 <td>
                                     <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
-                                        <tr id="groupPlaceholder"></tr>
+                                        <tr id="groupPlaceholder">
+                                        </tr>
                                     </table>
                                 </td>
                             </tr>
@@ -149,6 +129,7 @@
                     </table>
                 </LayoutTemplate>
             </asp:ListView>
+            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Post]"></asp:SqlDataSource>--%>
         </div>
     </section>
     <script src="./JS/PrintingService.js"></script>
