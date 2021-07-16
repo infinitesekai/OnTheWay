@@ -48,7 +48,7 @@ namespace OnTheWay
             cmd.Parameters.AddWithValue("@poster_uid", Session["id"]);
             cmd.Parameters.AddWithValue("@poster_uname", Session["uname"]);
             cmd.Parameters.AddWithValue("@status", "1");
-            cmd.Parameters.AddWithValue("@creation_date", DateTime.Now);
+            cmd.Parameters.AddWithValue("@creation_date", DateTime.Today.ToString("dd-MM-yyyy"));
             cmd.ExecuteNonQuery();
             //DateTime.Now.ToString("dd-mm-yyyy")
 
