@@ -27,7 +27,8 @@ namespace OnTheWay
             {
                 con.Open();
 
-                string getToCompleteRequest = "select * from [Post] where poster_uid= '" + Session["id"] + "' and status=1 or status=2 ";
+                string getToCompleteRequest = "(select * from [Post] where poster_uid= '" + Session["id"] + "' and status=1) union " +
+                                                 "(select * from [Post] where poster_uid= '" + Session["id"] + "' and status=2)   ";
                 string getCompletedRequest = "select * from [Post] where poster_uid= '" + Session["id"] + "' and status= 3 ";
 
                 using (SqlCommand cmd = new SqlCommand(getToCompleteRequest, con))
