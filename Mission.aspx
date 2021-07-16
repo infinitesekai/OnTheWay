@@ -108,7 +108,7 @@
         }
 
             .button_cancel:hover {
-                background-color: #707070;
+                background-color: #464646;
             }
 
 
@@ -130,7 +130,7 @@
         }
 
             .button_complete:hover {
-                background-color: #707070;
+                background-color: #464646;
             }
     </style>
     <div style="margin: 10px;">

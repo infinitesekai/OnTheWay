@@ -45,11 +45,11 @@ namespace OnTheWay
             }
             else
             {
-                Response.Write("<script>alert('user login fail')</script>");
+                Response.Write("<script>alert('User login failed.')</script>");
 
             }
 
-            //Response.Write("<script>alert('user login successfully)</script>");
+         
 
             con.Close();
         }

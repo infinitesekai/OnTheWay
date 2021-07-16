@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div style="float: right;">
-                                    <asp:TextBox ID="login_password" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" placeholder="Password" margin="2px auto" ></asp:TextBox>
+                                    <asp:TextBox ID="login_password" runat="server" TextMode="Password" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" placeholder="Password" margin="2px auto" ></asp:TextBox>
                                 </div>
 
                             </div>
