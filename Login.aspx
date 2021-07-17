@@ -9,13 +9,11 @@
                 font-family: Space Grotesk;
                 font-weight:800; 
                 font-size:1.2em;
-                margin: 100px auto;
+                margin: 20px auto;
                 padding:10px; 
                 text-align:center;  
-                width:5em; 
-                height: 30px;
                 border-radius: 5px;
-                cursor: hand;
+                cursor: pointer;
             }
             .button_register:hover {
                 background-color: #707070;
@@ -24,49 +22,36 @@
     </style>
       <div style="margin: 0 auto; width: 1000px;">
         <div class="login_box_form" >
-                <table width="100%" style="padding: 50px; margin-bottom: 3px; margin: 0 auto; padding-bottom: 20px; ">
-                    <tr>
-                        <td>
-                            <div class="form_field">
-                                <div style="padding:5px; display: inline-block;">
+                <table width="80%" style="padding: 50px; margin-bottom: 3px; margin: 50px auto 20px; padding-bottom: 20px; ">
+                    <tr class="form_field" style="padding:15px; display: inline-block;">
+                        <td style="text-align:center">
+                            <div >
                                     <img src="/images/profile.png" style="height: 48px; width:48px">
                                 </div>
-
-                                <div style="float: right;">
+                            </td>
+                        <td>
                                    <asp:TextBox ID="login_email" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" placeholder="Email" margin="2px auto" ></asp:TextBox>
-                                </div>
-
-                            </div>
                         </td>
                     </tr>
-                        
-
-
-                    <tr>
-                        <td>
-                            <div class="form_field">
-                                <div style="padding:5px; display: inline-block;">
+                        <tr class="form_field" style="padding:15px; display: inline-block;">
+                        <td style="text-align:center">
+                            <div >
                                     <img src="images/lock.png"/ style="height: 48px; width:48px">
                                 </div>
-
-                                <div style="float: right;">
-                                    <asp:TextBox ID="login_password" runat="server" TextMode="Password" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" placeholder="Password" margin="2px auto" ></asp:TextBox>
-                                </div>
-
-                            </div>
+                            </td>
+                        <td>
+                                   <asp:TextBox ID="login_password" runat="server" TextMode="Password" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="20px" ForeColor="#707070" Height="55px" Width="300px" BorderStyle="None" placeholder="Password"></asp:TextBox>
                         </td>
                     </tr>
+
                 </table>
 
-                <div class="button_login"> 
-                    <asp:Button ID="btn_login" runat="server" Text="Login" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_login_Click" />
-                </div>
-
-                <div class="button_register"> 
-                  <asp:Button ID="registerbtn" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="Btn_newregister_Click" />
-
-                </div>
-
+            <div style="margin:auto; position:absolute; left:41%;">
+                <asp:Button ID="btn_login" runat="server" Text="Login" Font-Names="Space Grotesk" ForeColor="White" CssClass="button_login" OnClick="Btn_login_Click" Height="50px" Width="244px" />
+                <br />
+                <asp:Button ID="registerbtn" runat="server" Text="Register" Class="button_register" OnClick="Btn_newregister_Click" Height="50px" Width="244px" />
+            </div>
+                    
 
 
         </div>
