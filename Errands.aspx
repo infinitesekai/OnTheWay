@@ -49,7 +49,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:TextBox ID="txtContent" name="descriptionInput" class="desInput" runat="server" Rows="8"
+                                        <asp:TextBox ID="txtContent" name="descriptionInput" class="desInput" runat="server" TextMode="MultiLine" Rows="8"
                                             placeholder="Describe your request:"></asp:TextBox>
                                     </td>
                                 </tr>

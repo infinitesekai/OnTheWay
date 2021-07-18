@@ -42,18 +42,25 @@ namespace OnTheWay
             con.Open();
             string insertQuery = "insert into [Post](title, content, types, poster_uid,poster_uname, status, creation_date) values (@title,@content, @types, @poster_uid,@poster_uname, @status, @creation_date)";
             SqlCommand cmd = new SqlCommand(insertQuery, con);
-            cmd.Parameters.AddWithValue("@title", txtTitle.Text);
-            cmd.Parameters.AddWithValue("@content", txtContent.Text);
-            cmd.Parameters.AddWithValue("@types", Session["type"]);
-            cmd.Parameters.AddWithValue("@poster_uid", Session["id"]);
-            cmd.Parameters.AddWithValue("@poster_uname", Session["uname"]);
-            cmd.Parameters.AddWithValue("@status", "1");
-            cmd.Parameters.AddWithValue("@creation_date", DateTime.Today.ToString("dd-MM-yyyy"));
-            cmd.ExecuteNonQuery();
-            //DateTime.Now.ToString("dd-mm-yyyy")
+            if (txtTitle.Text == "" || txtContent.Text == "")
+            {
+                Response.Write("<script>alert('Please fill in the title and description to make your requirement clear. Thank you!')</script>");
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@title", txtTitle.Text);
+                cmd.Parameters.AddWithValue("@content", txtContent.Text);
+                cmd.Parameters.AddWithValue("@types", Session["type"]);
+                cmd.Parameters.AddWithValue("@poster_uid", Session["id"]);
+                cmd.Parameters.AddWithValue("@poster_uname", Session["uname"]);
+                cmd.Parameters.AddWithValue("@status", "1");
+                cmd.Parameters.AddWithValue("@creation_date", DateTime.Today.ToString("dd-MM-yyyy"));
+                cmd.ExecuteNonQuery();
+                //DateTime.Now.ToString("dd-mm-yyyy")
 
-            con.Close();
-            Response.Redirect("~/Cleaning.aspx");
+                con.Close();
+                Response.Redirect("~/Cleaning.aspx");
+            }
 
         }
         
