@@ -112,15 +112,12 @@ namespace OnTheWay
                 else
                 {
 
-
-
                     SqlCommand cmd = new SqlCommand(help, con);
                     cmd.Parameters.AddWithValue("@post_id", post_id);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     PostListView();
                     Response.Redirect("Mission.aspx");
-
 
                 }
 
