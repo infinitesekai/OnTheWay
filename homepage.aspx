@@ -380,7 +380,7 @@
             <b>Services</b>
         </div>
 
-        <div style="margin: 5px auto; width: 70%; text-align: center; padding: 10px;">
+        <div style="margin: 5px auto; width: 45%; text-align: center; padding: 10px;">
             <table width="100%" cellpadding="30px">
                 <tr>
                     <td width="25%">
