@@ -56,7 +56,7 @@
                     <tr>
                         <td>
                             <div style="margin: 24px; margin-top: 1px; margin-bottom: 5px;">
-                                <asp:TextBox ID="password" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="15px" ForeColor="#707070" Height="40px" Width="410px" placeholder="Password" TextMode="Password" margin="2px auto" ></asp:TextBox>
+                                <asp:TextBox ID="password" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="15px" ForeColor="#707070" Height="40px" Width="410px" placeholder="Password" BorderStyle="None" TextMode="Password" margin="2px auto" ></asp:TextBox>
 
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" 
                                     runat="server" ErrorMessage="Password required" Text="*"
@@ -69,7 +69,7 @@
                     <tr>
                         <td>
                             <div style="margin: 24px; margin-top: 1px; margin-bottom: 5px;">
-                                <asp:TextBox ID="re_pass" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="15px" ForeColor="#707070" Height="40px" Width="410px" placeholder="Retype password" TextMode="Password" margin="2px auto" ></asp:TextBox>
+                                <asp:TextBox ID="re_pass" runat="server" BackColor="#F0EDED" Font-Names="Space Grotesk" Font-Size="15px" ForeColor="#707070" Height="40px" Width="410px" placeholder="Retype password" BorderStyle="None" TextMode="Password" margin="2px auto" ></asp:TextBox>
 
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorConfirmPassword" 
                                     runat="server" ErrorMessage="Re-type Password required" Text="*"
@@ -97,7 +97,7 @@
                 <div class="button_register"> 
                     
 
-                    <asp:Button ID="btn_register" runat="server" Text="Register" BackColor="#13227A" BorderStyle="None" Font-Names="Space Grotesk" Font-Size="15pt" ForeColor="White" OnClick="btn_register_Click" Height="50px" />
+                    <asp:Button ID="btn_register" runat="server" Text="Register" CssClass="button_login"  Font-Names="Space Grotesk" Font-Size="15pt" OnClick="btn_register_Click" Height="50px" Width="244px"/>
 
                     
                 </div>

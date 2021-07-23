@@ -57,50 +57,7 @@ namespace OnTheWay
         }
 
 
-        /*     protected void CancelReqBtn_Click(object sender, EventArgs e)
-             {
-
-
-                 string CS = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-                 using (SqlConnection con = new SqlConnection(CS))
-                 {
-                     string deleteRequest = "delele from [Post] where post_id=@postid";
-                     cmd.Parameters.AddWithValue("@postid", postid);
-                     SqlCommand cmd = new SqlCommand(deleteRequest, con);
-                     con.Open();
-
-                     cmd.Parameters.AddWithValue("@EmpID", EmpID);
-                 }
-             }
-     */
-        /*protected void ToCompleterequestList_ItemCommand(object sender, ListViewCommandEventArgs e)
-          {
-              *//*Label lbl = (Label)e.Item.FindControl("Postid");
-              int postid = 0;
-              Int32.TryParse(lbl.Text, out postid);*//*
-
-              string CS = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-              if (e.CommandName == "delete")
-              {
-                  using (SqlConnection con = new SqlConnection(CS))
-                  {
-                      con.Open();
-                      string deleteRequest = "delete from [Post] where post_id= @post_id ";
-
-
-                      using (SqlCommand cmd = new SqlCommand(deleteRequest, con))
-                      {
-                          cmd.Parameters.AddWithValue("@posti_id", post_id);
-                          cmd.ExecuteNonQuery();
-                      }
-
-                      con.Close();
-
-                  }
-                  Response.Redirect("MyRequest.aspx");
-              }
-
-          }*/
+       
 
         protected void ToCompleterequestList_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
