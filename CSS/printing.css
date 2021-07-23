@@ -73,13 +73,10 @@
 .requestContent {
     position: fixed;
     border-radius: 15px;
-    /*box-shadow: 0px 4px 5px #707070;*/
-   /* left: 23em;*/
     width: 60%;
-    height: fit-content;
+    height: fit-content();
     background-color: white;
-    /*top: 5em;*/
-    /*width: 100%;*/
+
     
 }
 .requestBody {
@@ -98,9 +95,6 @@
     font-family: 'Space Grotesk';
     font-size: 30px;
     font-weight: 900;
-    /*padding: 5px;
-    padding-top:15px;
-    padding-left:30px;*/
     padding: 0.5em;
     text-align: center;
 }
@@ -127,7 +121,7 @@
 .modalPopup {
     position: relative;
     width: 600px;
-    height: fit-content;
+    height: fit-content();
     background-color: #ffffff00;
 }
 
@@ -143,17 +137,11 @@
 }
 
 .requestPrinting {
-    /*display: none;*/
     position: fixed;
     z-index: 1; /*sit on top*/
     left: 275px;
     top: 155px;
     overflow: auto; /*enable scroll if needed*/
-    /*background-color: rgba(202, 197, 197, 0.6);
-    -webkit-animation-name: fadeIn;
-    -webkit-animation-duration: 0.5s;
-    animation-name: fadeIn;
-    animation-duration: 0.5s;*/
     background-color: rgba(202, 197, 197, 0.6);
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.5s;
